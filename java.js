@@ -1,7 +1,8 @@
 /* Create function to determine playerselection */
 function getPlayerChoice() {
-    let playerChoice = prompt("Rock, Paper, Scissors");
-    while (playerChoice != "Rock" && playerChoice != "Paper" && playerChoice != "Scissors") {
+    let playerChoice = ""
+    while (playerChoice.toLowerCase() != "rock" && playerChoice.toLowerCase() != "paper" && playerChoice.toLowerCase() != "scissors") {
+        console.log(playerChoice)
         playerChoice = prompt("Rock, Paper, Scissors");
     }
 
