@@ -1,14 +1,13 @@
 /* Create function to determine playerselection */
 function getPlayerChoice() {
-    let playerChoice = prompt("Rock, Paper, Scissors?");
-    console.log(playerChoice)
-    playerChoice = playerChoice.toLowerCase();
-    while (playerChoice != "rock" || playerChoice != "paper" || playerChoice != "sccissors") {
-        playerChoice = prompt("Rock, Paper, Scissors?");
-        console.log(playerChoice);
-        
+    let playerChoice = prompt("Rock, Paper, Scissors");
+    while (playerChoice != "Rock" && playerChoice != "Paper" && playerChoice != "Scissors") {
+        playerChoice = prompt("Rock, Paper, Scissors");
     }
-}
+
+    console.log("yay");
+ }
+getPlayerChoice();
 console.log("made it")
 
     /* prompt choicewindow to user - convert chocie to lowercase - if user did not choose rock paper or scissors
