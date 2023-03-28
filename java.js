@@ -2,7 +2,6 @@
 function getPlayerChoice() {
     let playerChoice = ""
     while (playerChoice.toLowerCase() != "rock" && playerChoice.toLowerCase() != "paper" && playerChoice.toLowerCase() != "scissors") {
-        console.log(playerChoice)
         playerChoice = prompt("Rock, Paper, Scissors");
     }
     return playerChoice
@@ -24,30 +23,46 @@ function getComputerChoise() {
 }
 
 function playRound(playerSelection, computerSelection) {
+    playerResult = ""
     if (playerSelection === "rock" && computerSelection === "paper") {
         alert("You lose! Paper beats Rock")
+        playerResult = "lose"
+        return playerResult
     }
     else if (playerSelection === "paper" && computerSelection === "rock") {
         alert("You win! Paper beats Rock")
+        playerResult = "win"
+        return playerResult
     }
     else if (playerSelection === "rock" && computerSelection === "scissors") {
         alert("You win! Rock beats Scissors")
+        playerResult = "win"
+        return playerResult
     }
     else if (playerSelection === "scissors" && computerSelection === "rock") {
         alert("You lose! Rock beats Scissors")
+        playerResult = "lose"
+        return playerResult
     }
     else if (playerSelection === "paper" && computerSelection === "scissors") {
         alert("You lose! Scissors beat Paper")
+        playerResult = "lose"
+        return playerResult
     }
     else if (playerSelection === "scissors" && computerSelection === "paper") {
         alert("You win Scissors beat Paper")
+        playerResult = "win"
+        return playerResult
     }
     else {
         alert("Draw!")
+        playerResult = "draw"
+        return playerResult
     }
 }
 
 playRound(getPlayerChoice(), getComputerChoise())
+
 /* Evaluate both selections and check for win 
 If not win --> draw*/
 
