@@ -4,7 +4,7 @@ function getPlayerChoice() {
     while (playerChoice.toLowerCase() != "rock" && playerChoice.toLowerCase() != "paper" && playerChoice.toLowerCase() != "scissors") {
         playerChoice = prompt("Rock, Paper, Scissors");
     }
-    return playerChoice
+    return playerChoice.toLowerCase()
 
  }
 
@@ -16,7 +16,7 @@ function getPlayerChoice() {
 /* Create function to determine computerselection 
 The computer needs to select a random item from a list of three choices */
 
-function getComputerChoise() {
+function getComputerChoice() {
     let choices = ["Rock", "Paper", "Scissors"];
     let choice = choices[Math.floor(Math.random() * choices.length)];
     return choice.toLowerCase()
@@ -61,8 +61,27 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-playRound(getPlayerChoice(), getComputerChoise())
+
+
 
 /* Evaluate both selections and check for win 
 If not win --> draw*/
 
+function game() {
+    let round = ""
+    let winCount = 0
+    for (let i = 0; i < 5; i++) {
+        round = playRound(getPlayerChoice(), getComputerChoice())
+        if (round === "win") {
+            winCount += 1
+        }
+    }
+    if (winCount >= 3) {
+        alert("You win!")
+    }
+    else {
+        alert("You lose!")
+    }
+}
+
+game()
