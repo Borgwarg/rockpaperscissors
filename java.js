@@ -5,11 +5,9 @@ function getPlayerChoice() {
         console.log(playerChoice)
         playerChoice = prompt("Rock, Paper, Scissors");
     }
+    return playerChoice
 
-    console.log("yay");
  }
-getPlayerChoice();
-console.log("made it")
 
     /* prompt choicewindow to user - convert chocie to lowercase - if user did not choose rock paper or scissors
     prompt again until user chooses rock paper or scissors - return value */
@@ -22,11 +20,34 @@ The computer needs to select a random item from a list of three choices */
 function getComputerChoise() {
     let choices = ["Rock", "Paper", "Scissors"];
     let choice = choices[Math.floor(Math.random() * choices.length)];
-    return choice
+    return choice.toLowerCase()
 }
 
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection === "rock" && computerSelection === "paper") {
+        alert("You lose! Paper beats Rock")
+    }
+    else if (playerSelection === "paper" && computerSelection === "rock") {
+        alert("You win! Paper beats Rock")
+    }
+    else if (playerSelection === "rock" && computerSelection === "scissors") {
+        alert("You win! Rock beats Scissors")
+    }
+    else if (playerSelection === "scissors" && computerSelection === "rock") {
+        alert("You lose! Rock beats Scissors")
+    }
+    else if (playerSelection === "paper" && computerSelection === "scissors") {
+        alert("You lose! Scissors beat Paper")
+    }
+    else if (playerSelection === "scissors" && computerSelection === "paper") {
+        alert("You win Scissors beat Paper")
+    }
+    else {
+        alert("Draw!")
+    }
+}
 
-
-
+playRound(getPlayerChoice(), getComputerChoise())
 /* Evaluate both selections and check for win 
 If not win --> draw*/
+
